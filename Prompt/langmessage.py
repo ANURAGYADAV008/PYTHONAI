@@ -2,10 +2,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.messages import HumanMessage,SystemMessage,AIMessage
 from langchain_ollama import ChatOllama
 llm = ChatOllama(
-    model="phi3:latest",
-    num_predict=300,
-    num_ctx=4096,
-    temperature=0.7
+    model="gemma4:e2b",
 )
 
 chat_template=ChatPromptTemplate([
@@ -15,5 +12,7 @@ chat_template=ChatPromptTemplate([
     
 ])
 
-prompt=chat_template.invoke({'domain':'cricket','topic':'Dusra'})
+prompt=chat_template.invoke({'domain':'cricket','topic':'DRS'})
 print(prompt)
+res=llm.invoke(prompt)
+print(res.content)
