@@ -1,2 +1,4 @@
 venv
 .env
+Cromadb/my_vectordb
+my-vectordb
